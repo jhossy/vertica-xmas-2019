@@ -1,0 +1,1 @@
+# vertica-xmas-2019
