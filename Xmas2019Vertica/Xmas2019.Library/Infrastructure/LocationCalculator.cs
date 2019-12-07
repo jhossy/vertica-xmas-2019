@@ -33,14 +33,13 @@ namespace Xmas2019.Library.Infrastructure
             if (distance == 0d) return lat;
 
             return CalcLatMeters(lat, distance);
-            
         }
-        
+
         public static double MoveX(double lon, double distance, double lat)
         {
             if (distance == 0d) return lon;
 
-            return CalcLonMeters(lon, distance, lat);          
+            return CalcLonMeters(lon, distance, lat);     
         }
 
     }

@@ -76,11 +76,12 @@ namespace Xmas2019.TestConsole
 
             Console.ReadLine();
         }
+
         private static void Test()
         {
             double currentLon = 71.639566053691;
             double currentLat = -51.1902823595313;
-            
+
             double lon = LocationCalculator.MoveX(currentLat, 10000, currentLon);
             double lat = LocationCalculator.MoveY(currentLon, -7500);
 
