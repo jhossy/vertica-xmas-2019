@@ -47,8 +47,6 @@ namespace Xmas2019.Library.Infrastructure
 
         public CanePosition()
         {
-            //lat = 0;
-            //lon = 0;
         }
 
         public override string ToString()

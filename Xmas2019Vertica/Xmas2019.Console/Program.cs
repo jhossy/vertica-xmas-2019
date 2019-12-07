@@ -29,9 +29,7 @@ namespace Xmas2019.TestConsole
             Console.WriteLine("Fetching document...");
 
             SantaInformation santaInfo = client.GetDocument(index, documentId);
-
-            //Console.WriteLine("Santainfo: " + santaInfo.ToString());
-
+            
             Console.WriteLine("Converting to meters...");
 
             IEnumerable<SantaMovement> alignedSantaMovements = santaInfo.ConvertAllMovementsToMeters();
@@ -73,38 +71,16 @@ namespace Xmas2019.TestConsole
             }
 
             Console.WriteLine($"lat:{currentPosition.lat.ToString(CultureInfo.GetCultureInfo("en-US"))}, lon: {currentPosition.lon.ToString(CultureInfo.GetCultureInfo("en-US"))}");
-
-            var res = PostAnswer(documentId, newPosition);
-
+            
             //Test();
 
             Console.ReadLine();
         }
-
-        private static HttpContent PostAnswer(string id, CanePosition pos)
-        {
-            SendAnswer answer = new SendAnswer() { Id = id, Position = pos };
-            var serializerSettings = new JsonSerializerSettings();
-            serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
-
-            string str = JsonConvert.SerializeObject(answer, serializerSettings);
-
-            //StringContent content = new StringContent(JsonConvert.SerializeObject(answer, serializerSettings), System.Text.Encoding.UTF8, "application/json");
-
-            //HttpResponseMessage response = client.PostAsync("https://vertica-xmas2019.azurewebsites.net/api/santarescue", content).Result;
-            //   return response.Content;
-            return null;
-        }
-
         private static void Test()
         {
             double currentLon = 71.639566053691;
             double currentLat = -51.1902823595313;
-
-            //CanePosition currPos = new CanePosition() { lat = currentLat, lon = currentLon };
-            //var res = LocationCalculator.MoveSanta(currPos, new SantaMovement() { Direction = "right", Unit = "meter", Value = 10000 });
-            //var res1 = LocationCalculator.MoveSanta(res, new SantaMovement() { Direction = "down", Unit = "meter", Value = 7500 });
+            
             double lon = LocationCalculator.MoveX(currentLat, 10000, currentLon);
             double lat = LocationCalculator.MoveY(currentLon, -7500);
 
