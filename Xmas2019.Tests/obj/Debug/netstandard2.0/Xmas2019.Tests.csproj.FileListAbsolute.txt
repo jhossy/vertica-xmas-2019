@@ -1,0 +1,12 @@
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\bin\Debug\netstandard2.0\Xmas2019.Tests.deps.json
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\bin\Debug\netstandard2.0\Xmas2019.Tests.dll
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\bin\Debug\netstandard2.0\Xmas2019.Library.dll
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\bin\Debug\netstandard2.0\Xmas2019.Library.pdb
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.csprojAssemblyReference.cache
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.csproj.CoreCompileInputs.cache
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.AssemblyInfoInputs.cache
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.AssemblyInfo.cs
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.csproj.CopyComplete
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\bin\Debug\netstandard2.0\Xmas2019.Tests.pdb
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.dll
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Tests\obj\Debug\netstandard2.0\Xmas2019.Tests.pdb

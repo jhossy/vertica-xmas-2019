@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Hos\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
+    "restore": {
+      "projectUniqueName": "C:\\Development\\Vertica-xmas-2019\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj",
+      "projectName": "Xmas2019.Library",
+      "projectPath": "C:\\Development\\Vertica-xmas-2019\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj",
+      "packagesPath": "C:\\Users\\Hos\\.nuget\\packages\\",
+      "outputPath": "C:\\Development\\Vertica-xmas-2019\\Xmas2019Vertica\\Xmas2019.Library\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Hos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.0"
+      ],
+      "sources": {
+        "C:\\Development\\NuGet modules\\Dictionary": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://sitecore.myget.org/F/sc-packages/": {}
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "netstandard2.0": {}
+    }
+  }
+}

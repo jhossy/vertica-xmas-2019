@@ -1,0 +1,143 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Tests\\Xmas2019.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj",
+        "projectName": "Xmas2019.Library",
+        "projectPath": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj",
+        "packagesPath": "C:\\Users\\Hos\\.nuget\\packages\\",
+        "outputPath": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Development\\NuGet modules\\Dictionary": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://sitecore.myget.org/F/sc-packages/": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Elasticsearch.Net": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Tests\\Xmas2019.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Tests\\Xmas2019.Tests.csproj",
+        "projectName": "Xmas2019.Tests",
+        "projectPath": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Tests\\Xmas2019.Tests.csproj",
+        "packagesPath": "C:\\Users\\Hos\\.nuget\\packages\\",
+        "outputPath": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Development\\NuGet modules\\Dictionary": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://sitecore.myget.org/F/sc-packages/": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj": {
+                "projectPath": "C:\\Development\\Xmas2019Vertica\\Xmas2019Vertica\\Xmas2019.Library\\Xmas2019.Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "AutoFixture.Xunit2": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

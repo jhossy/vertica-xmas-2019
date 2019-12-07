@@ -1,0 +1,9 @@
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\bin\Debug\netstandard2.0\Xmas2019.Library.deps.json
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\bin\Debug\netstandard2.0\Xmas2019.Library.dll
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\obj\Debug\netstandard2.0\Xmas2019.Library.csprojAssemblyReference.cache
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\obj\Debug\netstandard2.0\Xmas2019.Library.csproj.CoreCompileInputs.cache
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\obj\Debug\netstandard2.0\Xmas2019.Library.AssemblyInfoInputs.cache
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\obj\Debug\netstandard2.0\Xmas2019.Library.AssemblyInfo.cs
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\bin\Debug\netstandard2.0\Xmas2019.Library.pdb
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\obj\Debug\netstandard2.0\Xmas2019.Library.dll
+C:\Development\Xmas2019Vertica\Xmas2019Vertica\Xmas2019.Library\obj\Debug\netstandard2.0\Xmas2019.Library.pdb
