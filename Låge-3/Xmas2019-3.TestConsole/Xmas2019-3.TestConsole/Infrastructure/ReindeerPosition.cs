@@ -19,7 +19,7 @@ namespace Xmas2019_3.TestConsole.Infrastructure
 
         public override string ToString()
         {
-            return $"{Id}, {CountryCode}, {Name}";//, ({Location.Position.Latitude},{Location.Position.Longitude})";
+            return $"{Id}, {CountryCode}, {Name}, ({Location.Position.Latitude},{Location.Position.Longitude})";
         }
     }
 

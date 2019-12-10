@@ -18,14 +18,14 @@ namespace Xmas2019_3.TestConsole.Infrastructure
 
         public async Task GetDocumentByZoneAsync(Zone zone)
         {
-            string sqlText = "SELECT o.id " +
+            string sqlText = "SELECT o.id, o.countryCode, o.name, o.location " +
                                 "FROM Objects o " +
-                                "WHERE ST_DISTANCE(o.location, { 'type': 'Point', 'coordinates':[@lat, @lon]}) = @radius " +
+                                "WHERE ST_DISTANCE(o.location, { 'type': 'Point', 'coordinates':[@lat, @lon]}) < @radius " +
                                 "AND o.name = @name";
 
             QueryDefinition query = new QueryDefinition(sqlText)
-                .WithParameter("@lat", zone.Center.Lat.ToString(CultureInfo.GetCultureInfo("en-US")))
-                .WithParameter("@lon", zone.Center.Lon.ToString(CultureInfo.GetCultureInfo("en-US")))
+                .WithParameter("@lat", zone.Center.Lat)
+                .WithParameter("@lon", zone.Center.Lon)
                 .WithParameter("@radius", zone.Radius)
                 .WithParameter("@name", zone.Reindeer);
 
