@@ -1,0 +1,109 @@
+{
+    "zones": [
+        {
+            "reindeer": "Cupid",
+            "countryCode": "MZ",
+            "cityName": "Massangena",
+            "center": {
+                "lat": -21.5373,
+                "lon": 32.9564
+            },
+            "radius": {
+                "unit": "kilometer",
+                "value": 1.746
+            }
+        },
+        {
+            "reindeer": "Comet",
+            "countryCode": "MW",
+            "cityName": "Dowa",
+            "center": {
+                "lat": -13.6532,
+                "lon": 33.9385
+            },
+            "radius": {
+                "unit": "meter",
+                "value": 1969.0
+            }
+        },
+        {
+            "reindeer": "Prancer",
+            "countryCode": "IN",
+            "cityName": "Faridabad",
+            "center": {
+                "lat": 28.4333,
+                "lon": 77.3167
+            },
+            "radius": {
+                "unit": "meter",
+                "value": 1883.0
+            }
+        },
+        {
+            "reindeer": "Blitzen",
+            "countryCode": "ID",
+            "cityName": "Kotabumi",
+            "center": {
+                "lat": -4.8333,
+                "lon": 104.9
+            },
+            "radius": {
+                "unit": "foot",
+                "value": 6509.173324817164
+            }
+        },
+        {
+            "reindeer": "Vixen",
+            "countryCode": "UZ",
+            "cityName": "Chirchiq",
+            "center": {
+                "lat": 41.455,
+                "lon": 69.56
+            },
+            "radius": {
+                "unit": "kilometer",
+                "value": 1.983
+            }
+        },
+        {
+            "reindeer": "Dasher",
+            "countryCode": "US",
+            "cityName": "Fort Mill",
+            "center": {
+                "lat": 35.0062,
+                "lon": -80.9388
+            },
+            "radius": {
+                "unit": "meter",
+                "value": 1672.0
+            }
+        },
+        {
+            "reindeer": "Donner",
+            "countryCode": "SI",
+            "cityName": "Kostel",
+            "center": {
+                "lat": 45.5084,
+                "lon": 14.9101
+            },
+            "radius": {
+                "unit": "meter",
+                "value": 1973.0
+            }
+        },
+        {
+            "reindeer": "Dancer",
+            "countryCode": "US",
+            "cityName": "Baldwin Park",
+            "center": {
+                "lat": 34.0829,
+                "lon": -117.972
+            },
+            "radius": {
+                "unit": "meter",
+                "value": 1835.0
+            }
+        }
+    ],
+    "token": "OUn2BREa6Iqmi2hgVMQIQiBHh2ANSmVw1ygtySs56tRnuIrMQjHiS5mQw4dBMxlGEYy5tqGZecaqmCQwXqWU7Q=="
+}
