@@ -1,107 +1,107 @@
 {
   "zones": [
     {
-      "reindeer": "Donner",
-      "countryCode": "CU",
-      "cityName": "Nueva Gerona",
+      "reindeer": "Prancer",
+      "countryCode": "BO",
+      "cityName": "Santa Cruz",
       "center": {
-        "lat": 21.8837,
-        "lon": -82.8
+        "lat": -17.7539,
+        "lon": -63.226
       },
       "radius": {
-        "unit": "meter",
-        "value": 1830.0
-      }
-    },
-    {
-      "reindeer": "Cupid",
-      "countryCode": "US",
-      "cityName": "Georgetown",
-      "center": {
-        "lat": 38.2253,
-        "lon": -84.5481
-      },
-      "radius": {
-        "unit": "meter",
-        "value": 1879.0
+        "unit": "kilometer",
+        "value": 1.67
       }
     },
     {
       "reindeer": "Dancer",
-      "countryCode": "GH",
-      "cityName": "Yendi",
+      "countryCode": "GF",
+      "cityName": "Saint-Georges",
       "center": {
-        "lat": 9.4337,
-        "lon": -0.0167
-      },
-      "radius": {
-        "unit": "meter",
-        "value": 1637.0
-      }
-    },
-    {
-      "reindeer": "Dasher",
-      "countryCode": "GH",
-      "cityName": "Accra",
-      "center": {
-        "lat": 5.55,
-        "lon": -0.2167
-      },
-      "radius": {
-        "unit": "meter",
-        "value": 1653.0
-      }
-    },
-    {
-      "reindeer": "Prancer",
-      "countryCode": "CD",
-      "cityName": "Kikwit",
-      "center": {
-        "lat": -5.03,
-        "lon": 18.85
+        "lat": 3.9105,
+        "lon": -51.81
       },
       "radius": {
         "unit": "kilometer",
-        "value": 1.809
-      }
-    },
-    {
-      "reindeer": "Vixen",
-      "countryCode": "CU",
-      "cityName": "Havana",
-      "center": {
-        "lat": 23.132,
-        "lon": -82.3642
-      },
-      "radius": {
-        "unit": "kilometer",
-        "value": 1.778
-      }
-    },
-    {
-      "reindeer": "Comet",
-      "countryCode": "SD",
-      "cityName": "Haiya",
-      "center": {
-        "lat": 18.3362,
-        "lon": 36.3842
-      },
-      "radius": {
-        "unit": "meter",
-        "value": 1944.0
+        "value": 1.841
       }
     },
     {
       "reindeer": "Blitzen",
-      "countryCode": "US",
-      "cityName": "Cutler Bay",
+      "countryCode": "RU",
+      "cityName": "Vitim",
       "center": {
-        "lat": 25.5765,
-        "lon": -80.3357
+        "lat": 59.4515,
+        "lon": 112.5578
+      },
+      "radius": {
+        "unit": "kilometer",
+        "value": 1.861
+      }
+    },
+    {
+      "reindeer": "Vixen",
+      "countryCode": "US",
+      "cityName": "Blairsville",
+      "center": {
+        "lat": 40.4325,
+        "lon": -79.2599
+      },
+      "radius": {
+        "unit": "foot",
+        "value": 5511.7999927887276
+      }
+    },
+    {
+      "reindeer": "Comet",
+      "countryCode": "AU",
+      "cityName": "Sale",
+      "center": {
+        "lat": -38.1096,
+        "lon": 147.06
+      },
+      "radius": {
+        "unit": "kilometer",
+        "value": 1.784
+      }
+    },
+    {
+      "reindeer": "Donner",
+      "countryCode": "PH",
+      "cityName": "Digos",
+      "center": {
+        "lat": 6.7497,
+        "lon": 125.3572
       },
       "radius": {
         "unit": "meter",
-        "value": 1835.0
+        "value": 1801.0
+      }
+    },
+    {
+      "reindeer": "Cupid",
+      "countryCode": "CN",
+      "cityName": "Baishan",
+      "center": {
+        "lat": 41.9,
+        "lon": 126.43
+      },
+      "radius": {
+        "unit": "meter",
+        "value": 1850.0
+      }
+    },
+    {
+      "reindeer": "Dasher",
+      "countryCode": "PH",
+      "cityName": "San Fernando",
+      "center": {
+        "lat": 15.0343,
+        "lon": 120.6844
+      },
+      "radius": {
+        "unit": "kilometer",
+        "value": 1.768
       }
     }
   ],

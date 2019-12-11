@@ -58,7 +58,7 @@ namespace Xmas2019_3.TestConsole
 
             try
             {
-                await SendResult(_id, positions);
+                //await SendResult(_id, positions);
             }
             catch (Exception ex)
             {
