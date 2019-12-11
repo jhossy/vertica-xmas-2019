@@ -19,7 +19,33 @@ namespace Xmas2019_3.TestConsole.Infrastructure
 
         public override string ToString()
         {
-            return $"{Id}, {CountryCode}, {Name}, ({Location.Position.Latitude},{Location.Position.Longitude})";
+            return $"{Id}, Country:{CountryCode}, Name:{Name}, Location(lat,lon):({Location.Position.Latitude},{Location.Position.Longitude})";
+        }
+    }
+
+    public class ReindeerLocated
+    {
+        public string name { get; set; }
+
+        public GeoPoint position { get; set; }
+    }
+
+    public class ReindeerAnswer
+    {
+        public string id { get; set; }
+
+        public List<ReindeerLocated> locations { get; set; }
+        
+        public ReindeerAnswer(string inputId, List<ReindeerPosition> positions)
+        {
+            id = inputId;
+
+            locations = new List<ReindeerLocated>();
+
+            foreach(var pos in positions)
+            {
+                locations.Add(new ReindeerLocated() { name = pos.Name, position = new GeoPoint() { lat = pos.Location.Position.Latitude, lon = pos.Location.Position.Longitude } });
+            }
         }
     }
 

@@ -31,7 +31,7 @@ namespace Xmas2019_3.TestConsole.Infrastructure
 
         public override string ToString()
         {
-            return $"{CountryCode}-{CityName} {Reindeer}, Center: ({Center.Lat},{Center.Lon}), Radius: {Radius.Value} {Radius.Unit}";
+            return $"{CountryCode}-{CityName} {Reindeer}, Center: ({Center.lat},{Center.lon}), Radius: {Radius.Value} {Radius.Unit}";
         }
     }
 }

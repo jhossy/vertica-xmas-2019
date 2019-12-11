@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.Azure.Cosmos;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace Xmas2019_3.TestConsole.Infrastructure
 {
@@ -16,49 +17,38 @@ namespace Xmas2019_3.TestConsole.Infrastructure
             _container = _client.GetContainer(databaseId, container);
         }
 
-        public async Task GetDocumentByZoneAsync(Zone zone)
+        public async Task<ReindeerPosition> GetDocumentByZoneAsync(Zone zone)
         {
             string sqlText = "SELECT o.id, o.countryCode, o.name, o.location " +
                                 "FROM Objects o " +
-                                "WHERE ST_DISTANCE(o.location, { 'type': 'Point', 'coordinates':[@lat, @lon]}) < @radius " +
+                                "WHERE ST_DISTANCE(o.location, { 'type': 'Point', 'coordinates':[@lon, @lat]}) < @radius " +
                                 "AND o.name = @name";
 
             QueryDefinition query = new QueryDefinition(sqlText)
-                .WithParameter("@lat", zone.Center.Lat)
-                .WithParameter("@lon", zone.Center.Lon)
-                .WithParameter("@radius", zone.Radius)
+                .WithParameter("@lon", zone.Center.lon)
+                .WithParameter("@lat", zone.Center.lat)                
+                .WithParameter("@radius", zone.Radius.Value)
                 .WithParameter("@name", zone.Reindeer);
 
             FeedIterator<ReindeerPosition> queryResultSetIterator = _container.GetItemQueryIterator<ReindeerPosition>(query, null, new QueryRequestOptions() { PartitionKey = new PartitionKey(zone.CountryCode) });
+
+            List<ReindeerPosition> result = new List<ReindeerPosition>();
 
             while (queryResultSetIterator.HasMoreResults)
             {
                 FeedResponse<ReindeerPosition> currentResultSet = await queryResultSetIterator.ReadNextAsync();
                 foreach (ReindeerPosition pos in currentResultSet)
                 {
-                    System.Console.WriteLine(pos.ToString());
+                    result.Add(pos);
+                    System.Console.WriteLine("Found:" + pos.ToString());
                 }
                 System.Console.WriteLine("Next document...");
             }
+
+            if (result.Count != 1) throw new System.Exception("Too many reindeer positions found");
+
+
+            return result.First();
         }
-
-        //private readonly DocumentClient _client;
-        //private readonly string _databaseId;
-        //public CosmosConnector(string endpointUri, string primaryKey, string databaseId)
-        //{
-        //    _client = new DocumentClient(new System.Uri(endpointUri), primaryKey);
-        //    _databaseId = databaseId;
-        //}
-
-        //public async Task GetDocumentByZoneAsync(string collection, Zone zone)
-        //{
-        //    foreach(ReindeerPosition pos in _client.CreateDocumentQuery<ReindeerPosition>(UriFactory.CreateDocumentCollectionUri(_databaseId, collection), new FeedOptions() { PartitionKey = new Microsoft.Azure.Documents.PartitionKey(zone.CountryCode)})
-        //        .Where(doc => doc.CountryCode == zone.CountryCode && doc.Location.Distance(new Microsoft.Azure.Documents.poi)
-        //    {
-        //        System.Console.WriteLine(pos.ToString());
-        //    }
-        //    //FeedIterator<ReindeerPosition> queryResultSetIterator = _container.GetItemQueryIterator<ReindeerPosition>(query);
-
-        //}
     }
 }
