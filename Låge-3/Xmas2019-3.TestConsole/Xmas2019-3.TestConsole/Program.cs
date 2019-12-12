@@ -34,14 +34,14 @@ namespace Xmas2019_3.TestConsole
             string rawInput = _fileReader.Read(filePath);
 
             Console.WriteLine("File successfully read, parsing file...");
-            
+
             InputData data = JsonConvert.DeserializeObject<InputData>(rawInput);
 
             List<Zone> normalizedZones = new List<Zone>();
 
             CosmosConnector cosmosConnector = new CosmosConnector(_endpointUri, _authKey, _databaseId, _collectionId);
 
-            List<ReindeerPosition> positions = new List<ReindeerPosition>();
+            List<ReindeerLocation> positions = new List<ReindeerLocation>();
 
             foreach (Zone zone in data.Zones)
             {
@@ -50,43 +50,45 @@ namespace Xmas2019_3.TestConsole
 
                 //Console.WriteLine($"Zone - {zone.ToString()}");
                 Console.WriteLine($"Normalized - {normalized.ToString()}");
-
+                               
                 Console.WriteLine("Connecting to CosmosDb...");
-                positions.Add(await cosmosConnector.GetDocumentByZoneAsync(normalized));                
+
+                ReindeerPosition locatedReindeer = await cosmosConnector.GetDocumentByZoneAsync(normalized);
+                positions.Add(new ReindeerLocation() { Name = locatedReindeer.Name, Position = new GeoPoint() { lat = locatedReindeer.Location.Position.Latitude, lon = locatedReindeer.Location.Position.Longitude } });
                 Console.WriteLine("-----------------------------------------------------------");
             }
 
             try
             {
-                //await SendResult(_id, positions);
+                await SendResult(_id, positions);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
-            
+
             Console.ReadLine();
         }
 
-        private static async Task SendResult(string id, List<ReindeerPosition> positions)
+        private static async Task SendResult(string id, List<ReindeerLocation> locations)
         {
             Console.WriteLine();
 
-            string tmp = JsonConvert.SerializeObject(new ReindeerAnswer(id, positions));
+            //string tmp = JsonConvert.SerializeObject(new { id = id, locations = locations });
 
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://vertica-xmas2019.azurewebsites.net");
-                
-                //HttpResponseMessage apiResponse = await httpClient.PostAsJsonAsync("/api/reindeerrescue", JsonConvert.SerializeObject(new ReindeerAnswer(id, positions)));
 
-                //if (!apiResponse.IsSuccessStatusCode)
-                //    throw new InvalidOperationException($"{apiResponse.StatusCode}: {(await apiResponse.Content.ReadAsStringAsync())}");
+                HttpResponseMessage apiResponse = await httpClient.PostAsJsonAsync("/api/reindeerrescue", new { id = id, locations = locations });
 
-                //Console.WriteLine($"Result: {await apiResponse.Content.ReadAsStringAsync()}");
+                if (!apiResponse.IsSuccessStatusCode)
+                    throw new InvalidOperationException($"{apiResponse.StatusCode}: {(await apiResponse.Content.ReadAsStringAsync())}");
+
+                Console.WriteLine($"Result: {await apiResponse.Content.ReadAsStringAsync()}");
             }
-            
+
         }
     }
 }

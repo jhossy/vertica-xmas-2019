@@ -23,31 +23,37 @@ namespace Xmas2019_3.TestConsole.Infrastructure
         }
     }
 
-    public class ReindeerLocated
+    public class ReindeerLocation
     {
-        public string name { get; set; }
-
-        public GeoPoint position { get; set; }
+        public string Name { get; set; }
+        public GeoPoint Position { get; set; }
     }
 
-    public class ReindeerAnswer
-    {
-        public string id { get; set; }
+    //public class ReindeerLocated
+    //{
+    //    public string name { get; set; }
 
-        public List<ReindeerLocated> locations { get; set; }
-        
-        public ReindeerAnswer(string inputId, List<ReindeerPosition> positions)
-        {
-            id = inputId;
+    //    public GeoPoint position { get; set; }
+    //}
 
-            locations = new List<ReindeerLocated>();
+    //public class ReindeerRequest
+    //{
+    //    public string id { get; set; }
 
-            foreach(var pos in positions)
-            {
-                locations.Add(new ReindeerLocated() { name = pos.Name, position = new GeoPoint() { lat = pos.Location.Position.Latitude, lon = pos.Location.Position.Longitude } });
-            }
-        }
-    }
+    //    public List<ReindeerLocated> locations { get; set; }
+
+    //    public ReindeerRequest(string inputId, List<ReindeerPosition> positions)
+    //    {
+    //        id = inputId;
+
+    //        locations = new List<ReindeerLocated>();
+
+    //        foreach(var pos in positions)
+    //        {
+    //            locations.Add(new ReindeerLocated() { name = pos.Name, position = new GeoPoint() { lat = pos.Location.Position.Latitude, lon = pos.Location.Position.Longitude } });
+    //        }
+    //    }
+    //}
 
     //public class Location
     //{
