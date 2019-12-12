@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xmas2019_3.TestConsole.Infrastructure
+namespace Xmas2019_3.Library.Infrastructure.Geo
 {
     public class Zone
     {

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xmas2019-3.TestConsole", "Xmas2019-3.TestConsole\Xmas2019-3.TestConsole.csproj", "{02F6C9CB-818D-4405-960B-B057C737D4D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xmas2019-3.Library", "Xmas2019-3.Library\Xmas2019-3.Library.csproj", "{201F52E3-DE79-4811-A9E0-B1BE0E023292}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{02F6C9CB-818D-4405-960B-B057C737D4D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02F6C9CB-818D-4405-960B-B057C737D4D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02F6C9CB-818D-4405-960B-B057C737D4D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

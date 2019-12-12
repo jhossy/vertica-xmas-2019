@@ -1,4 +1,6 @@
-﻿namespace Xmas2019_3.TestConsole.Infrastructure
+﻿using Xmas2019_3.Library.Infrastructure;
+
+namespace Xmas2019_3.Library.Infrastructure.Geo
 {
     public class Radius
     {
@@ -13,7 +15,7 @@
             Radius radius = new Radius() { Unit = "meter" };
 
             if (Unit == "foot")
-            {                
+            {
                 radius.Value = RadiusConverter.ConvertFeetToMeter(Value);
                 return radius;
             }

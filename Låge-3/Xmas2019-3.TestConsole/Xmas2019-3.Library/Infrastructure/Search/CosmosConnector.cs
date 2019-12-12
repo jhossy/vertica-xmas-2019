@@ -3,8 +3,10 @@ using System.Linq;
 using Microsoft.Azure.Cosmos;
 using System.Globalization;
 using System.Collections.Generic;
+using Xmas2019_3.Library.Infrastructure.Geo;
+using Xmas2019_3.Library.Infrastructure;
 
-namespace Xmas2019_3.TestConsole.Infrastructure
+namespace Xmas2019_3.Library.Infrastructure.Search
 {
     public class CosmosConnector
     {
@@ -26,7 +28,7 @@ namespace Xmas2019_3.TestConsole.Infrastructure
 
             QueryDefinition query = new QueryDefinition(sqlText)
                 .WithParameter("@lon", zone.Center.lon)
-                .WithParameter("@lat", zone.Center.lat)                
+                .WithParameter("@lat", zone.Center.lat)
                 .WithParameter("@radius", zone.Radius.Value)
                 .WithParameter("@name", zone.Reindeer);
 
