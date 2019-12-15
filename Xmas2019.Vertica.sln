@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xmas2019-3.TestConsole", "Xmas2019-3.TestConsole\Xmas2019-3.TestConsole.csproj", "{02F6C9CB-818D-4405-960B-B057C737D4D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xmas2019.TestConsole", "Xmas2019.TestConsole\Xmas2019.TestConsole.csproj", "{02F6C9CB-818D-4405-960B-B057C737D4D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xmas2019-3.Library", "Xmas2019-3.Library\Xmas2019-3.Library.csproj", "{201F52E3-DE79-4811-A9E0-B1BE0E023292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xmas2019.Library", "Xmas2019.Library\Xmas2019.Library.csproj", "{201F52E3-DE79-4811-A9E0-B1BE0E023292}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xmas2019.Tests", "Xmas2019.Tests\Xmas2019.Tests.csproj", "{E4185441-6E1B-4431-9B63-1CA23EBA8513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{201F52E3-DE79-4811-A9E0-B1BE0E023292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4185441-6E1B-4431-9B63-1CA23EBA8513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4185441-6E1B-4431-9B63-1CA23EBA8513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4185441-6E1B-4431-9B63-1CA23EBA8513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4185441-6E1B-4431-9B63-1CA23EBA8513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

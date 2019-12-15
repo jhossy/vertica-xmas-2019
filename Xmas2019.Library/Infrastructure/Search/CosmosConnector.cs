@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.Azure.Cosmos;
-using System.Globalization;
 using System.Collections.Generic;
-using Xmas2019_3.Library.Infrastructure.Geo;
-using Xmas2019_3.Library.Infrastructure;
+using Xmas2019.Library.Infrastructure;
+using Xmas2019.Library.Infrastructure.Geo;
 
-namespace Xmas2019_3.Library.Infrastructure.Search
+namespace Xmas2019.Library.Infrastructure.Search
 {
     public class CosmosConnector
     {
@@ -23,7 +22,7 @@ namespace Xmas2019_3.Library.Infrastructure.Search
         {
             string sqlText = "SELECT o.id, o.countryCode, o.name, o.location " +
                                 "FROM Objects o " +
-                                "WHERE ST_DISTANCE(o.location, { 'type': 'Point', 'coordinates':[@lon, @lat]}) < @radius " +
+                                "WHERE ST_DISTANCE(o.location, { 'type': 'Point', 'coordinates':[@lon, @lat]}) <= @radius " +
                                 "AND o.name = @name";
 
             QueryDefinition query = new QueryDefinition(sqlText)

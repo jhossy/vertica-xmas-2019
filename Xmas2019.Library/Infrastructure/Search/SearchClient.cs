@@ -1,14 +1,13 @@
 ﻿using Elasticsearch.Net;
 using Nest;
 using System;
-using Xmas2019.Library.Infrastructure;
 
 namespace Xmas2019.Library.Infrastructure.Search
 {
     public class SearchClient
     {
         private readonly ElasticClient _client;
-        
+
         public SearchClient(string userName, string password, string cloudId)
         {
             if (string.IsNullOrEmpty(userName)) throw new ArgumentNullException(nameof(userName));
@@ -27,9 +26,9 @@ namespace Xmas2019.Library.Infrastructure.Search
             try
             {
                 GetResponse<SantaInformation> result = _client.Get<SantaInformation>(request);
-                if(result.IsValid) return result.Source;                
+                if (result.IsValid) return result.Source;
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.ReadLine();

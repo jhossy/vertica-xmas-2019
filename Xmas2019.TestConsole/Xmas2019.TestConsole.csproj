@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{02F6C9CB-818D-4405-960B-B057C737D4D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Xmas2019_3.TestConsole</RootNamespace>
-    <AssemblyName>Xmas2019-3.TestConsole</AssemblyName>
+    <RootNamespace>Xmas2019.TestConsole</RootNamespace>
+    <AssemblyName>Xmas2019.TestConsole</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -164,9 +164,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xmas2019-3.Library\Xmas2019-3.Library.csproj">
+    <ProjectReference Include="..\Xmas2019.Library\Xmas2019.Library.csproj">
       <Project>{201f52e3-de79-4811-a9e0-b1be0e023292}</Project>
-      <Name>Xmas2019-3.Library</Name>
+      <Name>Xmas2019.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

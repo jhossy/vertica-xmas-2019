@@ -1,11 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos.Spatial;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Xmas2019_3.Library.Infrastructure
+namespace Xmas2019.Library.Infrastructure
 {
     public class ReindeerPosition
     {

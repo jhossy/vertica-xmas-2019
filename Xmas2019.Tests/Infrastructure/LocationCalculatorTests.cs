@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xmas2019.Library.Infrastructure;
+﻿using Xmas2019.Library.Infrastructure;
 using Xunit;
 
 namespace Xmas2019.Tests.Infrastructure

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Xmas2019_3.Library.Infrastructure.Geo;
+using Xmas2019.Library.Infrastructure;
+using Xmas2019.Library.Infrastructure.Geo;
 
-namespace Xmas2019_3.Library.Infrastructure.Movement
+namespace Xmas2019.Library.Infrastructure.Movement
 {
     public static class SantaMover
     {

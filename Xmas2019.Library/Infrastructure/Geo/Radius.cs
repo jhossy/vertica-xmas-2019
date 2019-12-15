@@ -1,6 +1,6 @@
-﻿using Xmas2019_3.Library.Infrastructure;
+﻿using Xmas2019.Library.Infrastructure;
 
-namespace Xmas2019_3.Library.Infrastructure.Geo
+namespace Xmas2019.Library.Infrastructure.Geo
 {
     public class Radius
     {

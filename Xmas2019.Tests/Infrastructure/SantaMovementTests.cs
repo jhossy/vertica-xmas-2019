@@ -1,5 +1,4 @@
 ﻿using AutoFixture.Xunit2;
-using System;
 using Xmas2019.Library.Infrastructure;
 using Xunit;
 

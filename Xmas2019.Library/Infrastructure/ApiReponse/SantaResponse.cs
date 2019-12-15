@@ -1,6 +1,6 @@
-﻿using Xmas2019_3.Library.Infrastructure.Geo;
+﻿using Xmas2019.Library.Infrastructure.Geo;
 
-namespace Xmas2019_3.Library.Infrastructure.ApiReponse
+namespace Xmas2019.Library.Infrastructure.ApiReponse
 {
     public class SantaResponse
     {

@@ -1,6 +1,6 @@
-﻿using Xmas2019_3.Library.Infrastructure.Geo;
+﻿using Xmas2019.Library.Infrastructure.Geo;
 
-namespace Xmas2019_3.Library.Infrastructure
+namespace Xmas2019.Library.Infrastructure
 {
     public class ReindeerLocation
     {

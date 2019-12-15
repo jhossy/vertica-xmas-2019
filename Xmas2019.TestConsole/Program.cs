@@ -1,16 +1,13 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using Xmas2019_3.Library.Infrastructure;
-using Xmas2019_3.Library.Infrastructure.ApiReponse;
-using Xmas2019_3.Library.Infrastructure.Geo;
-using Xmas2019_3.Library.Infrastructure.Movement;
-using Xmas2019_3.Library.Infrastructure.Search;
+using Xmas2019.Library.Infrastructure;
+using Xmas2019.Library.Infrastructure.ApiReponse;
+using Xmas2019.Library.Infrastructure.Geo;
+using Xmas2019.Library.Infrastructure.Movement;
+using Xmas2019.Library.Infrastructure.Search;
 
 namespace Xmas2019_3.Library
 {
