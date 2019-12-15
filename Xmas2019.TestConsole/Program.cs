@@ -9,7 +9,7 @@ using Xmas2019.Library.Infrastructure.Geo;
 using Xmas2019.Library.Infrastructure.Movement;
 using Xmas2019.Library.Infrastructure.Search;
 
-namespace Xmas2019_3.Library
+namespace Xmas2019.TestConsole
 {
     partial class Program
     {
