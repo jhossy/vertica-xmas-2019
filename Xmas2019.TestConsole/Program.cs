@@ -46,20 +46,11 @@ namespace Xmas2019_3.Library
 
         private static async Task<ParticipateResponse> Låge1(HttpClient httpClient)
         {
-            try
-            {
-                HttpResponseMessage apiResponse = await httpClient.PostAsJsonAsync("/api/participate", new { fullName = "Jesper Hossy", emailAddress = "jesh@widex.com", subscribeToNewsletter = true });
+            HttpResponseMessage apiResponse = await httpClient.PostAsJsonAsync("/api/participate", new { fullName = "Jesper Hossy", emailAddress = "jesh@widex.com", subscribeToNewsletter = true });
 
-                if (!apiResponse.IsSuccessStatusCode) throw new InvalidOperationException($"{apiResponse.StatusCode}: {(await apiResponse.Content.ReadAsStringAsync())}");
+            if (!apiResponse.IsSuccessStatusCode) throw new ChristmasException($"{apiResponse.StatusCode}: {(await apiResponse.Content.ReadAsStringAsync())}");
 
-                return await apiResponse.Content.ReadAsAsync<ParticipateResponse>();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-            }
-            return ParticipateResponse.Empty();
+            return await apiResponse.Content.ReadAsAsync<ParticipateResponse>();
         }
 
         private static async Task<SantaResponse> Låge2(ParticipateResponse participateResponse, HttpClient httpClient)
@@ -84,23 +75,13 @@ namespace Xmas2019_3.Library
 
             Console.WriteLine($"lat:{santaEndlocation.lat.ToString(CultureInfo.GetCultureInfo("en-US"))}, lon: {santaEndlocation.lon.ToString(CultureInfo.GetCultureInfo("en-US"))}");
 
-            try
-            {
-                HttpResponseMessage apiResponse = await httpClient.PostAsJsonAsync("/api/santarescue", new { id = participateResponse.Id, position = santaEndlocation });
+            HttpResponseMessage apiResponse = await httpClient.PostAsJsonAsync("/api/santarescue", new { id = participateResponse.Id, position = santaEndlocation });
 
-                if (!apiResponse.IsSuccessStatusCode) throw new InvalidOperationException($"{apiResponse.StatusCode}: {(await apiResponse.Content.ReadAsStringAsync())}");
+            if (!apiResponse.IsSuccessStatusCode) throw new ChristmasException($"{apiResponse.StatusCode}: {(await apiResponse.Content.ReadAsStringAsync())}");
 
-                Console.WriteLine(await apiResponse.Content.ReadAsStringAsync());
+            Console.WriteLine(await apiResponse.Content.ReadAsStringAsync());
 
-                return await apiResponse.Content.ReadAsAsync<SantaResponse>();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-            }
-
-            return SantaResponse.Empty();
+            return await apiResponse.Content.ReadAsAsync<SantaResponse>();
         }
 
         private static async Task<string> Låge3(ParticipateResponse participateResponse, SantaResponse data, HttpClient httpClient)
@@ -118,27 +99,17 @@ namespace Xmas2019_3.Library
                 Console.WriteLine("-----------------------------------------------------------");
             }
 
-            try
-            {
-                HttpResponseMessage apiReindeerResponse = await httpClient.PostAsJsonAsync("/api/reindeerrescue", new { id = participateResponse.Id, locations = positions });
+            HttpResponseMessage apiReindeerResponse = await httpClient.PostAsJsonAsync("/api/reindeerrescue", new { id = participateResponse.Id, locations = positions });
 
-                if (!apiReindeerResponse.IsSuccessStatusCode) throw new InvalidOperationException($"{apiReindeerResponse.StatusCode}: {(await apiReindeerResponse.Content.ReadAsStringAsync())}");
+            if (!apiReindeerResponse.IsSuccessStatusCode) throw new ChristmasException($"{apiReindeerResponse.StatusCode}: {(await apiReindeerResponse.Content.ReadAsStringAsync())}");
 
-                Console.WriteLine("##############################################################################");
+            Console.WriteLine("##############################################################################");
 
-                string result = await apiReindeerResponse.Content.ReadAsStringAsync();
+            string result = await apiReindeerResponse.Content.ReadAsStringAsync();
 
-                Console.WriteLine($"Result: {result}");
+            Console.WriteLine($"Result: {result}");
 
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-            }
-
-            return $"Låge 3 failed...";
+            return result;
         }
     }
 }
