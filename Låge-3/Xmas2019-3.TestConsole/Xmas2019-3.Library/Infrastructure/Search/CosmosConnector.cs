@@ -32,6 +32,8 @@ namespace Xmas2019_3.Library.Infrastructure.Search
                 .WithParameter("@radius", zone.Radius.Value)
                 .WithParameter("@name", zone.Reindeer);
 
+            System.Console.WriteLine("Connecting to CosmosDb...");
+
             FeedIterator<ReindeerPosition> queryResultSetIterator = _container.GetItemQueryIterator<ReindeerPosition>(query, null, new QueryRequestOptions() { PartitionKey = new PartitionKey(zone.CountryCode) });
 
             List<ReindeerPosition> result = new List<ReindeerPosition>();
