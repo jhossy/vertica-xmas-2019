@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Xmas2019.Library.Infrastructure;
 using Xmas2019.Library.Infrastructure.ApiReponse;
 using Xmas2019.Library.Infrastructure.Geo;
 using Xmas2019.Library.Infrastructure.Movement;
 using Xmas2019.Library.Infrastructure.Search;
+using Xmas2019.Library.Infrastructure.Toys;
 
 namespace Xmas2019.TestConsole
 {
@@ -21,7 +23,7 @@ namespace Xmas2019.TestConsole
         private static readonly string cloudId = "xmas2019:ZXUtY2VudHJhbC0xLmF3cy5jbG91ZC5lcy5pbyRlZWJjNmYyNzcxM2Q0NTE5OTcwZDc1Yzg2MDUwZTM2MyQyNDFmMzQ3OWNkNzg0ZTUyOTRkODk5OTViMjg0MjAyYg==";
 
         private static readonly string index = "santa-trackings";
-
+               
         static async Task Main(string[] args)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
@@ -38,7 +40,10 @@ namespace Xmas2019.TestConsole
                 SantaResponse data = await Låge2(participateResponse, httpClient);
 
                 //låge 3
-                string result = await Låge3(participateResponse, data, httpClient);
+                ReindeerResponse result = await Låge3(participateResponse, data, httpClient);
+
+                //låge 4
+                await Låge4(participateResponse, result.ToyDistributionXmlUrl, httpClient);
 
                 Console.ReadLine();
             }
@@ -84,7 +89,7 @@ namespace Xmas2019.TestConsole
             return await apiResponse.Content.ReadAsAsync<SantaResponse>();
         }
 
-        private static async Task<string> Låge3(ParticipateResponse participateResponse, SantaResponse data, HttpClient httpClient)
+        private static async Task<ReindeerResponse> Låge3(ParticipateResponse participateResponse, SantaResponse data, HttpClient httpClient)
         {
             CosmosConnector cosmosConnector = new CosmosConnector(_documentdbEndpointUri, _authKey, _databaseId, _collectionId);
 
@@ -105,11 +110,91 @@ namespace Xmas2019.TestConsole
 
             Console.WriteLine("##############################################################################");
 
-            string result = await apiReindeerResponse.Content.ReadAsStringAsync();
+            ReindeerResponse result = await apiReindeerResponse.Content.ReadAsAsync<ReindeerResponse>();
 
             Console.WriteLine($"Result: {result}");
 
             return result;
         }
+
+        private static async Task Låge4(ParticipateResponse participateResponse, string xmlUrl, HttpClient httpClient)
+        {
+            Console.WriteLine("Parsing XML...");
+
+            XDocument xmlDocument = XDocument.Load(xmlUrl);
+
+            ToyDistributionProblem parsedXml = XmlSerializerUtil.Deserialize<ToyDistributionProblem>(xmlDocument);
+
+            Console.WriteLine($"Xml parsed to object...{parsedXml.Children.Count} children and {parsedXml.Toys.Count} toys...");
+
+            Console.WriteLine("Starting to distribute toys to children...");
+
+            Queue<Child> remainingChilren = new Queue<Child>(parsedXml.Children);
+
+            int counter = 0;
+            ToyDistributorHelper toyDistributor = new ToyDistributorHelper(parsedXml.Toys);
+            //ToyDistributionResult result = new ToyDistributionResult();
+            List<ToyDistribution> distributionResult = new List<ToyDistribution>();
+
+            try
+            {
+                while (remainingChilren.Count > 0)
+                {
+                    Console.WriteLine($"Iteration: {counter}");
+
+                    Child currentChild = remainingChilren.Dequeue();
+
+                    Toy foundToy;
+                    bool resolved = toyDistributor.TryResolve(currentChild, out foundToy);
+
+                    if (resolved)
+                    {
+                        distributionResult.Add(new ToyDistribution() { ChildName = currentChild.Name, ToyName = foundToy.Name });
+                        toyDistributor.RemoveToy(foundToy);
+                    }
+                    else
+                    {
+                        remainingChilren.Enqueue(currentChild);
+                    }
+
+                    counter++;
+
+                    if (counter > 50) break;
+                }
+
+                //Console.WriteLine($"Toy distribution result: {result.ToString()}");
+
+                //List<ToyDistribution> distributionResult = new List<ToyDistribution>();
+                //foreach (var res in result.ToyDistribution)
+                //{
+                //    distributionResult.Add(new ToyDistribution() { ChildName = res.Key, ToyName = res.Value });
+                //}
+
+                HttpResponseMessage toyDistributionResponse = await httpClient.PostAsJsonAsync("/api/toydistribution", new { id = participateResponse.Id, toyDistribution = distributionResult });
+
+                if (!toyDistributionResponse.IsSuccessStatusCode)
+                {
+                    string reason = await toyDistributionResponse.Content.ReadAsStringAsync();
+                    throw new ChristmasException($"{toyDistributionResponse.StatusCode}: {(await toyDistributionResponse.Content.ReadAsStringAsync())}");
+                }
+
+                Console.WriteLine("##############################################################################");
+
+                string apiResult = await toyDistributionResponse.Content.ReadAsStringAsync();
+                Console.WriteLine(apiResult);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }    
+        }
+    }
+
+    public class ToyDistribution
+    {
+        public string ChildName { get; set; }
+
+        public string ToyName { get; set; }
     }
 }
